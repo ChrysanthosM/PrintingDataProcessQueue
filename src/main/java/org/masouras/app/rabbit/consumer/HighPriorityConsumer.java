@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class HighPriorityConsumer {
-    @RabbitListener(queues = RabbitConfig.HIGH_QUEUE, concurrency = "5")
+    @RabbitListener(queues = RabbitConfig.HIGH_QUEUE, concurrency = "8-16")
     public void handle(JobMessage msg) {
         if (log.isDebugEnabled()) log.debug("HIGH job: {}", msg.getPayload());
     }

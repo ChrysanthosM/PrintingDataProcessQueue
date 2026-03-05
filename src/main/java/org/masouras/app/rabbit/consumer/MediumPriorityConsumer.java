@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class MediumPriorityConsumer {
-    @RabbitListener(queues = RabbitConfig.MEDIUM_QUEUE, concurrency = "3")
+    @RabbitListener(queues = RabbitConfig.MEDIUM_QUEUE, concurrency = "4-8")
     public void handle(JobMessage msg) {
         if (log.isDebugEnabled()) log.debug("MEDIUM job: {}", msg.getPayload());
     }
