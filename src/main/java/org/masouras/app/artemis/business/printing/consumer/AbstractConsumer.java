@@ -14,6 +14,6 @@ abstract class AbstractConsumer implements ConsumerBase {
         Preconditions.checkNotNull(msg, "Message must not be null");
 
         printingDataEntityProcessor.processPrintingDataEntity(msg.getPrintingId());
-        if (log.isInfoEnabled()) log.info("job: {} processed", msg.getPrintingId());
+        if (log.isInfoEnabled()) log.info("PrintingJobMessage processed: {}", msg.getPrintingId());
     }
 }
