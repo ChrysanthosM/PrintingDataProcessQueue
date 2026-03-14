@@ -1,10 +1,11 @@
 package org.masouras.app.artemis.business.printing.consumer;
 
-import com.google.common.base.Preconditions;
 import lombok.extern.slf4j.Slf4j;
 import org.masouras.app.artemis.business.printing.model.PrintingJobMessage;
 import org.masouras.boundary.PrintingDataEntityProcessor;
 import org.masouras.model.mssql.schema.jpa.control.entity.PrintingDataEntity;
+
+import java.util.Objects;
 
 @Slf4j
 abstract class AbstractConsumer implements ConsumerBase {
@@ -13,7 +14,7 @@ abstract class AbstractConsumer implements ConsumerBase {
     @Override
     public void handleMsgMain(PrintingDataEntityProcessor printingDataEntityProcessor,
                               PrintingJobMessage msg) {
-        Preconditions.checkNotNull(msg, "Message must not be null");
+        Objects.requireNonNull(msg, "Message must not be null");
 
         PrintingDataEntity printingDataEntity = printingDataEntityProcessor.processPrintingDataEntity(msg.getPrintingId());
 
