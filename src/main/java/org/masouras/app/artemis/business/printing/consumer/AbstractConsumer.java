@@ -3,7 +3,7 @@ package org.masouras.app.artemis.business.printing.consumer;
 import lombok.extern.slf4j.Slf4j;
 import org.masouras.app.artemis.business.printing.model.PrintingJobMessage;
 import org.masouras.boundary.PrintingDataEntityProcessor;
-import org.masouras.model.mssql.schema.jpa.control.entity.PrintingDataEntity;
+import org.masouras.model.maria.schema.jpa.control.entity.PrintingDataEntity;
 
 import java.util.Objects;
 
